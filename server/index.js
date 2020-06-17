@@ -1,7 +1,8 @@
-const express=require('express')
-const app=express()
 require('dotenv').config()
+const express=require('express')
+let db=require('./src/database/db.js')
+db.connect()
+const app=express()
 
-app.get('/',(req,res)=>res.send('Welcome'))
 
-app.listen(process.env.PORT)
+app.listen(process.env.PORT) 
