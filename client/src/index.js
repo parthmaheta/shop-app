@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDom from 'react-dom'
-
-ReactDom.render(<App name='prinse'/>,document.getElementById('root'))
+import {NavBar} from './nav/nav.js'
+import {Slider} from './slider/slider.js'
+ReactDom.render(<App/>,document.getElementById('root'))
 
 
 function App(props){
-   
-return <h1>Welcome {props.name}</h1>
+  return <Fragment><NavBar/><Slider/></Fragment>
 }
+
 
 
 

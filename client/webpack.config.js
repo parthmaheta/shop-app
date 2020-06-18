@@ -11,9 +11,25 @@ module.exports={
            {
            test:/\.js$/,
            exclude:/node_modules/,
-           use:{
-               loader:"babel-loader"
-           }  }
+           use:["babel-loader"]
+           } ,
+           {
+               test:/\.css$/,
+               use: [
+                {
+                  loader: 'style-loader',
+                  options: { injectType: 'singletonStyleTag' },
+                },
+                'css-loader',
+              ]
+           },{
+               test:/\.(jpg|jpeg|png|gif)$/,
+               use:["file-loader"]
+           },
+           {
+            test:/\.html$/,
+            use:["html-loader"]  
+           } 
         ]  
     },
     plugins:[new HTMLWEBPACKPLUGIN({
