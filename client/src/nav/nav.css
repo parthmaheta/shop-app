@@ -1,47 +1,55 @@
-.navbar {
-    width: 50px;
-    height: 100%;
-    position: fixed;
-    color: skyblue;
-    background-color: black;
-    transition: 0.5s;
-    z-index: 1;
-    overflow-x: hidden;
-}
-.nav-menu-text{
-    margin-left: 20px;
-    display: none;
-}
-.nav-menu-list{
-   margin-top:10%; 
-   width: 100%;
-   font-size: 2rem;
-   color:white;
-   padding-left: 5px;
-}
-
-.nav-menu-list div{
-    margin-top:25px;
-}
-
-.navbar-open {
-    width: 350px;
-    max-width: 100%;
-}
-
-.nav-btn {
-    width: 50px;
+.navbar{
+    display: flex;
+    color:black;
     height: 50px;
-    margin: auto;
-    padding-left: 10px;
+    align-items: center;
+    position: relative;    
+}
+.navbar-right-col{
+    position: absolute;
+    right: 0;
 }
 
-.nav-btn div {
-    width: 35px;
-    height: 5px;
-    background-color: silver;
-    margin: 6px 0;
+.navbar-logo{
+    font-size: 2rem;
+    margin-left: 10px;
 }
 
-
-
+.navbar-btn{
+    border:1px solid royalblue;
+    border-radius: 12px;
+    background-color: white;
+    color: royalblue;
+    width:100px;
+    height: 40px;
+    text-align: center;
+    margin: auto 8px;
+    font-size: large;
+}
+.navbar-btn:hover{
+  background-color: royalblue;
+  color: white;
+}
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  
+  
+  #lblCartCount {
+      font-size: 20px;
+      background: #ff0000;
+      color: #fff;
+      padding: 0 5px;
+      vertical-align: top;
+      margin-left: -10px; 
+  }
+  
+ .fa-cart-plus{
+    color: royalblue;
+    font-size: 2.2rem;
+    margin: auto 8px;
+}

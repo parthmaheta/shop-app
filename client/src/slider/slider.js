@@ -4,9 +4,7 @@ import React, {
     useState
 } from 'react';
 import './slider.css'
-import work1 from "./../../public/img/work-1.jpg"
-import work2 from "./../../public/img/work-2.jpg"
-import work3 from "./../../public/img/work-3.jpg"
+
 
 export function Slider(props) {
     let [slideIndex, setIndex] = useState(0)
@@ -43,6 +41,7 @@ return (<div className = "container"id = 'slider' >
 }
 
 function Slide(props) {
-    let imgsrc = [work1, work2, work3]
+    let host=location.origin
+    let imgsrc = [host+"/public/img/work-1.jpg",host+"/public/img/work-2.jpg",host+"/public/img/work-3.jpg"]
     return ( < img src = {imgsrc[props.index]}/>)
     }

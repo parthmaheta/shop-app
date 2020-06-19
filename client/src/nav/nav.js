@@ -1,24 +1,29 @@
-import React,{Component} from 'react'
-import './nav.css'
+import React, { useEffect } from 'react';
+import  './nav.css'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export function NavBar(props){
-    return (<div className="navbar">
-      <div onClick={toggleNav} className='nav-btn'>
-          <div></div>
-          <div></div>
-          <div></div>
-      </div>
-      <div className='nav-menu-list'>
-            <div><i className='fa fa-cart-plus'></i>
-                <span className='nav-menu-text'>Cart</span></div>
-            <div><i className='fa fa-user-o'></i><span className='nav-menu-text'>Profile</span></div>
-            <div><i className='fa fa-sign-out'></i><span className='nav-menu-text'>Logout</span></div>
-      </div>
-    </div>)
+
+const navbar = (props) => { 
+    useEffect(()=>{
+        //props.dispatch({type:'INCREMENT'})
+        console.log(props);
+        
+    },[])
+    
+   return (<div className='navbar'>
+       <div className='navbar-logo'><Link to='/'>MySHOP</Link></div>
+       <div className='navbar-right-col'>
+         <Link to='/cart'>   <span className='fa fa-cart-plus'>{props.totalItems>0&&<Badge num={props.totalItems}/>}</span></Link>
+         <Link to='/signup'> <button className='navbar-btn'>SignUp</button></Link>
+         <Link to='/login'>  <button className='navbar-btn'>Login</button></Link>
+       </div>
+   </div>)
 }
-function toggleNav(){
-    document.getElementsByClassName('navbar')[0].classList.toggle('navbar-open')
-    let menu_text=document.getElementsByClassName('nav-menu-text')
-    for(let elem of menu_text)
-     elem.classList.toggle('show')
-}
+ function Badge(props){
+ return(<span className='badge' id='lblCartCount'>{props.num}</span>)
+ }
+const mapStateToProps=({totalItems})=>{return {totalItems}}
+
+
+ export let NavBar=connect(mapStateToProps,null)(navbar)
