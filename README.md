@@ -1,7 +1,8 @@
 WEB Application for Online Selling Products
 
 Tech Stack
-  Server
+  
+  Server       
      express js
 
   Database
@@ -11,5 +12,7 @@ Tech Stack
      react   
 
 Specification     
-
+    choose category
+       -books                      
+       -electronic                        
 init date - 17-06-2020

@@ -4,9 +4,9 @@ import React, {
     useState
 } from 'react';
 import './slider.css'
-import work1 from "./../../../public/img/work-1.jpg"
-import work2 from "./../../../public/img/work-2.jpg"
-import work3 from "./../../../public/img/work-3.jpg"
+import work1 from "./../../public/img/work-1.jpg"
+import work2 from "./../../public/img/work-2.jpg"
+import work3 from "./../../public/img/work-3.jpg"
 
 export function Slider(props) {
     let [slideIndex, setIndex] = useState(0)

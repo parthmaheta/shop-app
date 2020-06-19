@@ -1,9 +1,16 @@
 require('dotenv').config()
 const express=require('express')
-let db=require('./src/database/db.js')
-db.connect()
+const session=require('express-session')
+
 const app=express()
 
+
+app.use(session({secret:'shop_app',saveUninitialized:false,resave:true}))
 app.use(express.json())
 
-app.listen(process.env.PORT) 
+
+require('./src/database/db.js').connect().then(()=>{
+    app.use(require('./src/routes/client/client.js'))
+})
+app.listen(process.env.PORT)
+ 
