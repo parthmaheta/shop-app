@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import { Slider } from './slider/slider';
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import {NavBar} from './nav/nav.js'
+import {SignUp,LogIn,LogOut,Home} from './components/signup'
 
 function App(props){
         return(<Fragment>
-          <NavBar/>
-          <Slider/>
+          <NavBar/> 
           </Fragment>
         )    
 }
@@ -15,6 +14,12 @@ function App(props){
      return (<BrowserRouter>
                  <WrappedComponent/>
                  <Switch>
+                   <Route path='/'  component={Home} exact/>
+                   <Route path='/signup'  component={SignUp}/>
+                   <Route path='/login' component={LogIn}/>
+                   <Route path='/logout' component={LogOut}/>
+                   <Route path='*' component={()=><Redirect to='/'/>}/>
+                   
                 </Switch>
             </BrowserRouter>  
         )

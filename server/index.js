@@ -9,8 +9,9 @@ app.use(session({secret:'shop_app',saveUninitialized:false,resave:true}))
 app.use(express.json())
 
 
-require('./src/database/db.js').connect().then(()=>{
-    app.use(require('./src/routes/client/client.js'))
+require('./src/functions/db.js').connect().then(()=>{
+    app.use(require('./src/routes/client.js'))
+    app.use('/products/',require('./src/routes/product.js'))
 })
 app.listen(process.env.PORT)
  

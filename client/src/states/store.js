@@ -1,4 +1,5 @@
-import {createStore} from 'redux'
-import {CartReducer} from './reducer.js'
+import {createStore, combineReducers} from 'redux'
+import {CartReducer,AuthReducer} from './reducer.js'
 
-export const CartStore= createStore(CartReducer);
+export const CartStore= createStore(combineReducers({CartStore:CartReducer,AuthStore:AuthReducer}));
+  

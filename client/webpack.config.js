@@ -35,6 +35,12 @@ module.exports={
     plugins:[new HTMLWEBPACKPLUGIN({
         template:"./src/index.html",
         filename:"index.html"
-    })]
-    
+    })],
+    devServer:{
+        contentBase:'.',
+        port:8000,
+        historyApiFallback:true,
+        open:true
+        
+    }
 }
