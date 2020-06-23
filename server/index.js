@@ -7,11 +7,14 @@ const app=express()
 
 app.use(session({secret:'shop_app',saveUninitialized:false,resave:true}))
 app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 
 require('./src/functions/db.js').connect().then(()=>{
-    app.use(require('./src/routes/client.js'))
+    app.use('/',require('./src/routes/client.js'))
     app.use('/products/',require('./src/routes/product.js'))
+    app.use('/admin/',require('./src/routes/admin.js'))
+    app.get('*',(req,res)=>res.sendStatus(404))
 })
 app.listen(process.env.PORT)
  

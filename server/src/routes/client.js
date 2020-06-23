@@ -4,7 +4,6 @@ const db = require('../functions/db.js').getDB()
 const validation = require('../functions/validation.js')
 
 
-
 route.post('/login', validation.login, async (req, res) => {
     let {
         uid,
