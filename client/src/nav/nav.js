@@ -6,11 +6,7 @@ import { connect } from 'react-redux';
 
 const navbar = (props) => { 
     let menu=createRef()
-    useEffect(()=>{
-        //props.dispatch({type:'INCREMENT'})
-        console.log(props);
-        
-    },[props.totalItems,props.LOGGED])
+    
    function toggleMenu(){
      menu.current.classList.toggle('show')
    

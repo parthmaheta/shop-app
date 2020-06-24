@@ -1,7 +1,7 @@
 import { INCREMENT,DECREMENT } from "./action.js"
 
 let initState={
-    totalItems:220
+    totalItems:0
 }
 export function CartReducer(state=initState,action){
     switch(action.type){

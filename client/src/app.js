@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import {NavBar} from './nav/nav.js'
-import {SignUp,LogIn,LogOut,Home} from './components/signup'
+import {SignUp,LogIn,LogOut,Home} from './components/form.js'
+import { ErrorBoundary } from './components/error.js';
 
 function App(props){
         return(<Fragment>
@@ -13,14 +14,16 @@ function App(props){
     return (props)=>{
      return (<BrowserRouter>
                  <WrappedComponent/>
-                 <Switch>
-                   <Route path='/'  component={Home} exact/>
-                   <Route path='/signup'  component={SignUp}/>
-                   <Route path='/login' component={LogIn}/>
-                   <Route path='/logout' component={LogOut}/>
-                   <Route path='*' component={()=><Redirect to='/'/>}/>
-                   
-                </Switch>
+                 <ErrorBoundary>
+                    <Switch>
+                      <Route path='/'  component={Home} exact/>
+                      <Route path='/signup'  component={SignUp}/>
+                      <Route path='/login' component={LogIn}/>
+                      <Route path='/logout' component={LogOut}/>
+                      <Route path='*' component={()=><Redirect to='/'/>}/>
+                      
+                    </Switch>
+                </ErrorBoundary>
             </BrowserRouter>  
         )
      }

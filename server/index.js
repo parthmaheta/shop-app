@@ -4,7 +4,7 @@ const session=require('express-session')
 
 const app=express()
 
-
+app.use(require('cors')())
 app.use(session({secret:'shop_app',saveUninitialized:false,resave:true}))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
