@@ -14,17 +14,20 @@ export function CartReducer(state=initState,action){
     }
 }
 
-export function AuthReducer(state={isLogged:false},action){
+export function AuthReducer(state={isLogged:false,isLogging:false},action){
     switch(action.type){
 
         case 'LOGIN_SUCCESS':
-            return {isLogged:true}
- 
-        case 'LOGIN_FAILURE':
-            return {isLogged:false}
-
+            return {isLogged:true,isLogging:false}
+        
         case 'LOGOUT_SUCCESS':
-            return {isLogged:false}
+            return {isLogged:false,isLogging:false}            
+        case 'LOGGING': 
+            return {isLogged:false,isLogging:true}
+        case 'LOGGING_FAILURE':
+            return {isLogged:false,isLogging:false,MSG:action.msg}
+            
+
         default :
             return {...state}    
         }

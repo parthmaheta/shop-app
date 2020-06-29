@@ -4,10 +4,11 @@ const session=require('express-session')
 
 const app=express()
 
-app.use(require('cors')())
+app.use(require('cors')({ credentials: true, origin: "http://localhost:8000" }))
 app.use(session({secret:'shop_app',saveUninitialized:false,resave:true}))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.use(require('cookie-parser')())
 
 
 require('./src/functions/db.js').connect().then(()=>{

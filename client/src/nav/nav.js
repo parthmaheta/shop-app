@@ -11,8 +11,7 @@ const navbar = (props) => {
      menu.current.classList.toggle('show')
    
    }
-    
-    
+        
    return (<div className='navbar'>
        <div className='navbar-logo'><Link to='/' style={{color:'green'}}>MySHOP</Link></div>
        <div className='navbar-right-col' ref={menu}>

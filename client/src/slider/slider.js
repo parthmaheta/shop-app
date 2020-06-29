@@ -1,5 +1,4 @@
 import React, {
-    Component,
     useEffect,
     useState
 } from 'react';
@@ -44,4 +43,4 @@ function Slide(props) {
     let host=location.origin
     let imgsrc = [host+"/public/img/work-1.jpg",host+"/public/img/work-2.jpg",host+"/public/img/work-3.jpg"]
     return ( < img src = {imgsrc[props.index]}/>)
-    }
+}

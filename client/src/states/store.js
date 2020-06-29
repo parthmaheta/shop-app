@@ -1,5 +1,6 @@
-import {createStore, combineReducers} from 'redux'
+import {createStore, combineReducers,applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
 import {CartReducer,AuthReducer} from './reducer.js'
 
-export const CartStore= createStore(combineReducers({CartStore:CartReducer,AuthStore:AuthReducer}));
+export const Store= createStore(combineReducers({CartStore:CartReducer,AuthStore:AuthReducer}),applyMiddleware(thunk));
   

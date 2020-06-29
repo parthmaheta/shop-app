@@ -49,7 +49,7 @@ route.post('/forgotpassword', async (req, res) => {
 
         }
         else
-            return res.json({ success: 0, msg: 'no such record found' })
+            return res.json({ success: 0, msg: 'uid and mobile do not match' })
 
     }
 
